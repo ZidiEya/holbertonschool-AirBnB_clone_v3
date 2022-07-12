@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Replace the route 2-hbnb with 3-hbnb in the file 3-hbnb.py (based on 2-hbnb.py)"""
+"""Replace the route 3-hbnb with 4-hbnb in the file 4-hbnb.py (based on 3-hbnb.py)"""
 from flask import Flask, render_template
 from models import storage
 import uuid
@@ -7,14 +7,14 @@ app = Flask('web_dynamic')
 app.url_map.strict_slashes = False
 
 
-@app.route('/3-hbnb')
+@app.route('/4-hbnb')
 def display_hbnb():
     """func that generate page with popdown menu of states/cities"""
     states = storage.all('State')
     amenities = storage.all('Amenity')
     places = storage.all('Place')
     cache_id = uuid.uuid4()
-    return render_template('3-hbnb.html',
+    return render_template('4-hbnb.html',
                            states=states,
                            amenities=amenities,
                            places=places,
